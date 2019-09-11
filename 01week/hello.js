@@ -1,5 +1,5 @@
 var color = 'red';
-var otherColor = "blue";
+var otherColor = "green";
 
 console.log("my color is", color);
 
