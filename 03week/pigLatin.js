@@ -1,11 +1,11 @@
 "use strict";
 
-const assert = require("assert");
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// const assert = require("assert");
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
 function pigLatin(word) {
   // Your code here
@@ -35,6 +35,23 @@ function getPrompt() {
   });
 }
 
+function handleTranslate() {
+  console.log("I am inside handleTranslate!");
+  //step 1 get input value from input box
+  var inputBox = document.getElementById("plaintext");
+  var englishWord = inputBox.value;
+  console.log("english word", englishWord);
+
+  //step 2 call piglatin function with this value
+  var pigLatinWord = pigLatin(englishWord);
+  console.log("pig latin word", pigLatinWord);
+
+  //step 3 write the result tha the piglatin function returns to the screen
+  var spanElement = document.getElementById("pigLatinText");
+  console.log("span element", spanElement);
+  spanElement.innerHTML = pigLatinWord;
+}
+
 // Tests
 
 if (typeof describe === "function") {
@@ -57,5 +74,5 @@ if (typeof describe === "function") {
     });
   });
 } else {
-  getPrompt();
+  //getPrompt();
 }
