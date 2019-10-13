@@ -21,7 +21,7 @@ function printStacks() {
 
 function movePiece(startStack, endStack) {
   // Your code here
-
+  //moving one block to another stack
   let grabbed = stacks[startStack].pop();
   console.log(grabbed);
   stacks[endStack].push(grabbed);
@@ -29,6 +29,7 @@ function movePiece(startStack, endStack) {
 
 function isLegal() {
   // Your code here
+  //code for legal moves in game
   console.log(endStack);
 
   if (
@@ -53,8 +54,8 @@ function isLegal() {
 
 function checkForWin() {
   // Your code here
-
-  if (stacks.c.length === 4) {
+  //code to check if win
+  if (stacks.c.length === 4 || stacks.b.length === 4) {
     console.log("You win!");
   } else {
     getPrompt();
@@ -63,6 +64,7 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
+
   if (isLegal(startStack, endStack) === true) {
     movePiece(startStack, endStack);
     checkForWin(startStack, endStack);
