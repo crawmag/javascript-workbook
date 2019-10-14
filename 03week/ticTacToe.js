@@ -90,6 +90,7 @@ function diagonalWin() {
 
 function checkForWin() {
   // Your code here
+  //
   if (horizontalWin(row, column)) {
     return true;
   } else if (verticalWin(row, column)) {
