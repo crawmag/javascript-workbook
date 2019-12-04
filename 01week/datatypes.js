@@ -16,6 +16,23 @@ console.log(n);
 var bookTitle = "The Shinning";
 console.log(typeof bookTitle);
 
+//prints out number
+var numbers = 100;
+console.log(typeof numbers);
+
+//prints out boolean
+var booleans = true;
+console.log(typeof booleans);
+//prints out undefined
+var car;
+console.log(typeof car);
+//prints out object instead of null because the datatype of null is object
+var nul = null;
+console.log(typeof nul);
+//prints out NaN, using type of prints out number
+var nun = NaN * 0;
+console.log(nun);
+
 // Add two numbers together in javascript
 let firstNum = 20;
 let secondNum = 30;
