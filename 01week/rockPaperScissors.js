@@ -8,35 +8,18 @@ const rl = readline.createInterface({
 });
 
 function rockPaperScissors(hand1, hand2) {
-  //for a tie
-  if (hand1 === hand2) {
+  let lowerHand1 = hand1.toLowerCase().trim();
+  let lowerHand2 = hand2.toLowerCase().trim();
+  if (lowerHand1 === lowerHand2) {
     return "It's a tie!";
-  }
-  //rock beats scissors
-  if (hand1 === "rock") {
-    if (hand2 === "scissors") {
-      return "Hand 1 wins!";
-    } else {
-      return "Hand 2 wins!";
-    }
-  }
-
-  //paper beats rock
-  if (hand1 === "paper") {
-    if (hand2 === "rock") {
-      return "Hand 1 wins!";
-    } else {
-      return "Hand 2 wins!";
-    }
-  }
-
-  //scissor beat paper
-  if (hand1 === "scissors") {
-    if (hand2 === "paper") {
-      return "Hand 1 wins!";
-    } else {
-      return "Hand 2 wins!";
-    }
+  } else if (
+    (lowerHand1 === "rock" && lowerHand2 === "scissors") ||
+    (lowerHand1 === "scissors" && lowerHand2 === "paper") ||
+    (lowerHand1 === "paper" && lowerHand2 === "rock")
+  ) {
+    return "Hand one wins!";
+  } else {
+    return "Hand two wins!";
   }
 }
 
