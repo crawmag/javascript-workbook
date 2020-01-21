@@ -30,11 +30,39 @@ function getRandomInt(min, max) {
 
 function generateHint() {
   // your code here
+  var sArray = solution.split('');
+  var guessArray = guess.split('');
+  let correctLetters = 0;
+  let correctLettersLocations = 0;
+
+  for (let i = 0; i < sArray.length; i++) {
+    if (guessArray[i] === sArray) {
+      correctLettersLocations += 1;
+      sArray[i] = null;
+    }
+  }
+  for (let j =0; j < sArray.length; j++) {
+    const tragetIndex = sArray.indexOf(guessArray[j]);
+    if (tragetIndex > -1) {
+      correctLettersLocations ++;
+      sArray[tragetIndex] = null;
+    }
+  }
+  return `${correctLettersLocations}-${correctLetters}`;
 }
 
 function mastermind(guess) {
   solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+  if (guess === solution) {
+    return "You guessed it!";
+  } else {
+    var hint = generateHint(guess);
+    var hintGuess = guess + hint;
+    board.push(hintGuess);
+    return hint;
+  }
+
 }
 
 
